@@ -20,7 +20,7 @@ namespace TurboCAR.GetBorrowers.Repository
 
             try
             {
-                ConnectionMultiplexer Connection = ConnectionMultiplexer.Connect("52.163.252.25:6379");
+                ConnectionMultiplexer Connection = ConnectionMultiplexer.Connect("localhost");
                 IDatabase cache = Connection.GetDatabase();
                 var borrowers = JsonConvert.DeserializeObject<List<Borrower>>(cache.StringGet("TurboCAR.BorrowerList"));
                 return borrowers;
