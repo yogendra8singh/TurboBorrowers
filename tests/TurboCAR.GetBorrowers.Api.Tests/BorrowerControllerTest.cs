@@ -25,14 +25,14 @@ namespace TurboCAR.GetBorrowers.Api.Tests
             borrowers = JsonConvert.DeserializeObject<List<Borrower>>("[{\"id\":1,\"name\":\"MICROSEMI CORP- POWER PRODUCTS GRP\",\"cif\":\"100000004\"},{\"id\":2,\"name\":\"NEUROCOM INTERNATIONAL INC\",\"cif\":\"100000013\"},{\"id\":3,\"name\":\"DANIEL D JACKSON & JEANNE R JACKSON 1995 IRREVOCABLE TRUST\",\"cif\":\"100000036\"}]");
         }
 
-        [Fact]
-        public async Task GetAsyncTest()
-        {
-            repository.GetAsync().Returns(Task.Run(() => borrowers));
-            var result = controller.Get();
-            int actual = result.Result.Count;
-            Assert.True(actual == borrowers.Count);
-        }
+        //[Fact]
+        //public async Task GetAsyncTest()
+        //{
+        //    repository.GetAsync().Returns(Task.Run(() => borrowers));
+        //    var result = controller.Get();
+        //    int actual = result.Result.Count;
+        //    Assert.True(actual == borrowers.Count);
+        //}
 
         [Fact]
         public async Task GetAsyncWithParameterTest()
